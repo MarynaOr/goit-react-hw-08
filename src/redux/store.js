@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { contactsReducer } from "./component/Redux/contactsSlice";
+import { contactsReducer } from "./contactsSlice";
+
 import {
   persistStore,
   persistReducer,
@@ -10,21 +11,20 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-import storage from "redux-persist/lib/storage"; // Використовує localStorage
+import storage from "redux-persist/lib/storage";
+import { filterReducer } from "./filtersSlice";
 
-// ✅ Зберігаємо тільки поле `items` у contacts
 const persistConfig = {
-  key: "contacts",
+  key: "myBookContacts",
+  version: 1,
   storage,
-  whitelist: ["items"], // Зберігати тільки items
+  whitelist: ["items", "filters"],
 };
-
-// ✅ Обгортаємо `contactsReducer` у persistReducer
-const persistedContactsReducer = persistReducer(persistConfig, contactsReducer);
 
 export const store = configureStore({
   reducer: {
-    contacts: persistedContactsReducer, // Використовуємо персистентний редюсер
+    contacts: persistReducer(persistConfig, contactsReducer),
+    filter: filterReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -33,12 +33,7 @@ export const store = configureStore({
       },
     }),
 });
-
-// ✅ Створюємо persistor для PersistGate
 export const persistor = persistStore(store);
-
-export default store;
-
 
 // export const store = configureStore(
 //     {

@@ -12,7 +12,7 @@ const deleteContact = useSelector((state) => state.filter.item)
       <div>
         <span> {name} </span>
         <a href={`tel:${number}`}> {number} </a>
-        <button type="button" onClick={() => dispatch(deleteContact) }>Delete</button>
+        <button type="button" onClick={() => dispatch(deleteContact(id)) }>Delete</button>
 
 
 

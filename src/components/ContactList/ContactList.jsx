@@ -5,19 +5,21 @@ import s from "./ContactList.module.css";
 import SearchBox from "../SearchBox/SearchBox";
 const ContactList = () => {
   const contacts = useSelector((state) => state.contacts.items);
-  const filter = useSelector((state) => state.filter.filter)
+  const filter = useSelector((state) => state.filter.filter);
 
-  const filterContacts = contacts.filter((contact)=> contact.username.toLowerCase().includes(filter.toLowerCase()))
+  const filterContacts = contacts.filter((contact) =>
+    contact.username.toLowerCase().includes(filter.toLowerCase())
+  );
 
   return (
     <>
       <div className={s.con}>
         <ContactForm />
         <SearchBox />
-        <ul>
+        <ul className={s.item}>
           {filterContacts.length > 0 ? (
             filterContacts.map(({ id, username, phone }) => (
-              <li key={id}>
+              <li className={s.list} key={id}>
                 <Contact id={id} username={username} phone={phone} />
               </li>
             ))

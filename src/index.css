@@ -1,5 +1,5 @@
-body{
-  padding: 0 18px ;
+body {
+  padding: 0 18px;
   margin: 0 auto;
   background-image: url(../public/background_img-min.jpg);
   background-size: cover;
@@ -8,17 +8,16 @@ body{
   min-height: 100vh;
   background-attachment: fixed;
   position: relative;
-
 }
-ol,ul{
+ol,
+ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-p,a{
+p,
+a {
   padding: 0;
   margin: 0;
 }
-
-

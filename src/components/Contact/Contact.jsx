@@ -1,24 +1,29 @@
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsSlice";
+import { deleteContact, editContact } from "../../redux/contactsSlice";
+import s from "./Contact.module.css";
 
 const Contact = ({ id, username, phone }) => {
   const dispatch = useDispatch();
-  // console.log("Пропси в Contact.jsx:", { id, username, phone }); // 🔥
 
   return (
     <>
-      <div>
-        <p>
-        <span> Ім'я: {username} </span>
-      </p>
-        <p>
-        <span> Номер:  </span>{phone}
-      </p>
-        
-        <button type="button" onClick={() => dispatch(deleteContact(id))}>
-          Видалити
-        </button>
+      <div className={s.con}>
+        <p className={s.text}>{username}</p>
+        <p className={s.text}>
+          <a href={`tel:${phone}`} className={s.link}>
+            {" "}
+            {phone}{" "}
+          </a>
+        </p>
       </div>
+
+      <button
+        className={s.btn}
+        type="button"
+        onClick={() => dispatch(deleteContact(id))}
+      >
+        Видалити
+      </button>
     </>
   );
 };

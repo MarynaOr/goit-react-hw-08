@@ -1,0 +1,50 @@
+.con {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  max-width: 130px;
+  cursor: pointer;
+  background-color: #eba0004b;
+  padding: 8px;
+  border: none;
+  border-radius: 30px;
+  margin-top: 14px;
+  font-weight: 700;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.btn:hover {
+  color: rgb(0, 43, 83);
+  background-color: #eba100;
+}
+
+.btnChange {
+  max-width: 130px;
+  cursor: pointer;
+  background-color: #226b0046;
+  padding: 8px;
+  border: none;
+  border-radius: 30px;
+  margin-top: 14px;
+  font-weight: 700;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.btnChange:hover {
+  color: rgb(15, 0, 83);
+  background-color: #226b00;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  color: #1b3b00;
+  font-weight: 700;
+}
+
+.link {
+  color: #0d1d00;
+}

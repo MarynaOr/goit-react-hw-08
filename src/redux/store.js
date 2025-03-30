@@ -18,7 +18,6 @@ const persistConfig = {
   key: "myBookContacts",
   version: 1,
   storage,
-  // whitelist: ["contacts"],
 };
 
 export const store = configureStore({
@@ -34,15 +33,3 @@ export const store = configureStore({
     }),
 });
 export const persistor = persistStore(store);
-
-// export const store = configureStore(
-//     {
-//         contacts: {
-//               items: []
-//           },
-//         filters: {
-//               name: ""
-//           }
-//       }
-// )
-

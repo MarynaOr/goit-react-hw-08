@@ -1,7 +1,7 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { addContact } from "../../redux/contactsSlice";
 import { useDispatch } from "react-redux";
-import s from './ContactForm.module.css'
+import s from "./ContactForm.module.css";
 import * as Yup from "yup";
 const onlyLaters = /^[A-Za-zА-Яа-яЇїІіЄєҐґ'’\s]+$/;
 const phoneValidation = /^\+?\d{9,15}$/;
@@ -14,7 +14,7 @@ const validationSchema = Yup.object().shape({
     .matches(onlyLaters, "Можна вводити тільки літери!"),
 
   phone: Yup.string()
-  .min(9, "Мінімум 3 цифри!")
+    .min(9, "Мінімум 3 цифри!")
     .max(50, "Максимум 50!")
     .matches(phoneValidation, "Невірний формат!")
     .required("Обов'язкове поле!"),
@@ -35,44 +35,51 @@ const ContactForm = () => {
   };
 
   return (
-      <div>
-        <Formik
-       
-          validationSchema={validationSchema}
-          initialValues={initialValues}
-          onSubmit={onSubmit}
-        >
-          <Form className={s.con}>
-            <div className={s.conForm}>
-              <label className={s.label} htmlFor="nameFieldId">Ім'я</label>
-              <Field
-                className={s.input}
-                name="username"
-                type="text"
-                id="nameFieldId"
-                placeholder="Додати новий контакт"
-              />
-              {/* <ErrorMessage name="username">
-  {msg => <span style={{ color: "red", fontSize: "14px" }}>{msg}</span>}
-</ErrorMessage> */}
-              <ErrorMessage className={s.error} name="username" component="span" />
-            </div>
-            <div className={s.conForm}>
-              <label className={s.label} htmlFor="phoneFieldId">Номер</label>
-              <Field
-                className={s.input}
-                name="phone"
-                type="tel"
-                id="phoneFieldId"
-                placeholder="Додати номер телефона"
-              />
-              <ErrorMessage className={s.error} name="phone" component="span" />
-            </div>
+    <div>
+      <Formik
+        validationSchema={validationSchema}
+        initialValues={initialValues}
+        onSubmit={onSubmit}
+      >
+        <Form className={s.con}>
+          <div className={s.conForm}>
+            <label className={s.label} htmlFor="nameFieldId">
+              Ім'я
+            </label>
+            <Field
+              className={s.input}
+              name="username"
+              type="text"
+              id="nameFieldId"
+              placeholder="Додати новий контакт"
+            />
 
-            <button className={s.btn} type="submit">Додати контакт</button>
-          </Form>
-        </Formik>
-      </div>
+            <ErrorMessage
+              className={s.error}
+              name="username"
+              component="span"
+            />
+          </div>
+          <div className={s.conForm}>
+            <label className={s.label} htmlFor="phoneFieldId">
+              Номер
+            </label>
+            <Field
+              className={s.input}
+              name="phone"
+              type="tel"
+              id="phoneFieldId"
+              placeholder="Додати номер телефона"
+            />
+            <ErrorMessage className={s.error} name="phone" component="span" />
+          </div>
+
+          <button className={s.btn} type="submit">
+            Додати контакт
+          </button>
+        </Form>
+      </Formik>
+    </div>
   );
 };
 

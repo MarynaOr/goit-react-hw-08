@@ -1,53 +1,44 @@
-.con{
-    display: flex;
-    gap: 16px;
-    flex-direction: column;
-
+.con {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
 }
 
-.conForm{
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-
+.conForm {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.label{
-    font-weight: 500;
-    color: rgb(0, 0, 0);
-
+.label {
+  font-weight: 500;
+  color: rgb(0, 0, 0);
 }
 
-.input{
-background-color: transparent;
-outline: none;
-border: none;
-border-bottom: 2px solid #424242;
+.input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #424242;
 }
 
-
-
-.error{
-    color: rgb(255, 187, 0);
+.error {
+  color: rgb(255, 187, 0);
 }
 
-.btn{
-
-    max-width: 130px;
-    cursor: pointer;
-    background-color: #eba0004b;
-    padding: 8px;
-    border: none;
-    border-radius: 30px;
-    margin-top: 14px;
-    font-weight: 700;
-    transition: background-color 0.5s ease, color 0.5s ease;
+.btn {
+  max-width: 130px;
+  cursor: pointer;
+  background-color: #eba0004b;
+  padding: 8px;
+  border: none;
+  border-radius: 30px;
+  margin-top: 14px;
+  font-weight: 700;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.btn:hover{
-    color: rgb(0, 43, 83);
-    background-color: #eba100;
+.btn:hover {
+  color: rgb(0, 43, 83);
+  background-color: #eba100;
 }
-
-
-

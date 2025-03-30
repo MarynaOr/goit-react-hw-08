@@ -12,10 +12,9 @@ const Contact = ({ id, username, phone }) => {
         <span> Ім'я: {username} </span>
       </p>
         <p>
-        <span> Номер: {phone} </span>
+        <span> Номер:  </span>{phone}
       </p>
         
-        {/* <a href={`tel:${number}`}> {number} </a> */}
         <button type="button" onClick={() => dispatch(deleteContact(id))}>
           Видалити
         </button>

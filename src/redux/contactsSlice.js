@@ -8,6 +8,7 @@ const contactsSlice = createSlice({
   reducers: {
     addContact: (state, action) => {
       state.items.push(action.payload);
+    //   console.log("Контакти після додавання:", state.items);
     },
     deleteContact: (state, action) => {
       state.items = state.items.filter((item) => item.id !== action.payload);

@@ -1,21 +1,24 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { deleteContact } from "../../redux/contactsSlice";
 
-
-const Contact = ({ name, number }) => {
-const dispatch = useDispatch()
-const deleteContact = useSelector((state) => state.filter.item)
-
+const Contact = ({ id, username, phone }) => {
+  const dispatch = useDispatch();
+  // console.log("Пропси в Contact.jsx:", { id, username, phone }); // 🔥
 
   return (
     <>
       <div>
-        <span> {name} </span>
-        <a href={`tel:${number}`}> {number} </a>
-        <button type="button" onClick={() => dispatch(deleteContact(id)) }>Delete</button>
-
-
-
+        <p>
+        <span> Ім'я: {username} </span>
+      </p>
+        <p>
+        <span> Номер: {phone} </span>
+      </p>
+        
+        {/* <a href={`tel:${number}`}> {number} </a> */}
+        <button type="button" onClick={() => dispatch(deleteContact(id))}>
+          Видалити
+        </button>
       </div>
     </>
   );

@@ -1,8 +1,9 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import { addContact } from "../../redux/contactsSlice";
+// import { addContact } from "../../redux/contactsSlice";
 import { useDispatch } from "react-redux";
 import s from "./ContactForm.module.css";
 import * as Yup from "yup";
+import { addContacts } from "../../redux/contactsOps";
 const onlyLaters = /^[A-Za-zА-Яа-яЇїІіЄєҐґ'’\s]+$/;
 const phoneValidation = /^\+?\d{9,15}$/;
 
@@ -24,15 +25,27 @@ const ContactForm = () => {
   const initialValues = { username: "", phone: "" };
   const dispatch = useDispatch();
 
-  const onSubmit = (values, options) => {
-    const newContact = {
-      username: values.username,
-      phone: values.phone,
-      id: crypto.randomUUID(),
-    };
-    dispatch(addContact(newContact));
-    options.resetForm();
-  };
+
+  // console.log("addContact =>", addContact);
+const onSubmit = (values, options ) => {
+  const newContact = {
+    name: values.username,
+    number: values.phone,
+    // id: crypto.randomUUID(),
+  }
+  console.log("Відправляємо на сервер:", newContact);
+  dispatch(addContacts(newContact))
+  options.resetForm()
+}
+  // const onSubmit = (values, options) => {
+  //   const newContact = {
+  //     username: values.username,
+  //     phone: values.phone,
+  //     id: crypto.randomUUID(),
+  //   };
+  //   dispatch(addContact(newContact));   //???
+  //   options.resetForm();
+  // };
 
   return (
     <div>

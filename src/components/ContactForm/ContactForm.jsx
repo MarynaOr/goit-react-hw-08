@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import s from "./ContactForm.module.css";
 import * as Yup from "yup";
 import { addContacts } from "../../redux/contactsOps";
+import { nanoid } from "@reduxjs/toolkit";
 const onlyLaters = /^[A-Za-zА-Яа-яЇїІіЄєҐґ'’\s]+$/;
 const phoneValidation = /^\+?\d{9,15}$/;
 
@@ -30,8 +31,8 @@ const ContactForm = () => {
 const onSubmit = (values, options ) => {
   const newContact = {
     name: values.username,
-    number: values.phone,
-    // id: crypto.randomUUID(),
+    phone: values.phone,
+    id: nanoid,
   }
   console.log("Відправляємо на сервер:", newContact);
   dispatch(addContacts(newContact))

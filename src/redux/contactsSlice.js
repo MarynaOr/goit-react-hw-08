@@ -26,16 +26,16 @@ const contactsSlice = createSlice({
   // },
   extraReducers: builder => {
     builder.addCase(fetchContacts.pending, (state, action) => {
-     state.isLoading = true
+     state.isLoading = true;
     })
     .addCase(fetchContacts.fulfilled, (state, action) => {
-      state.isLoading = false,
-      state.isError = null,
-      state.items = action.payload
+      state.isLoading = false;
+      state.isError = null;
+      state.items = action.payload;
     })
     .addCase(fetchContacts.rejected, (state, action) => {
-      state.isLoading = false,
-      state.isError = action.payload
+      state.isLoading = false;
+      state.isError = action.payload;
     })
     .addCase(addContacts.fulfilled, (state, action) =>{
       state.items.push(action.payload);

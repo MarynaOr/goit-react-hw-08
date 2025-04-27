@@ -55,3 +55,23 @@ export const contactsReducer = contactsSlice.reducer;
 // (state, action) => {
   //   state.items = state.items.filter((item) => item.id !== action.payload);
   // },
+
+
+
+
+
+
+
+
+
+  // export const selectFilteredContacts = createSelector(
+  //   [selectContacts, filterNameContacts],
+  //   (contacts, filter) =>
+  //     contacts.filter((item) =>
+  //       item.name.toLowerCase().includes(filter.toLowerCase().trim())
+  //     )
+  // );
+
+
+
+

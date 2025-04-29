@@ -5,9 +5,7 @@ import s from "./SearchBox.module.css";
 const SearchBox = () => {
   const dispatch = useDispatch();
 
-  const selectFilter =useSelector(selectNameFilter)
-
-
+  const selectFilter = useSelector(selectNameFilter);
 
   const handleChange = (e) => {
     dispatch(changeFilter(e.target.value));
@@ -18,7 +16,7 @@ const SearchBox = () => {
         className={s.input}
         type="search"
         onChange={handleChange}
-        value={selectFilter} 
+        value={selectFilter}
         placeholder="Пошук"
         name="filter"
       />

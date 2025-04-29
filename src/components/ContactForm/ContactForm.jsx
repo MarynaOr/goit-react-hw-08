@@ -1,5 +1,4 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
-// import { addContact } from "../../redux/contactsSlice";
 import { useDispatch } from "react-redux";
 import s from "./ContactForm.module.css";
 import * as Yup from "yup";
@@ -26,27 +25,16 @@ const ContactForm = () => {
   const initialValues = { username: "", phone: "" };
   const dispatch = useDispatch();
 
-
-  // console.log("addContact =>", addContact);
-const onSubmit = (values, options ) => {
-  const newContact = {
-    name: values.username,
-    phone: values.phone,
-    id: nanoid,
-  }
-  console.log("Відправляємо на сервер:", newContact);
-  dispatch(addContacts(newContact))
-  options.resetForm()
-}
-  // const onSubmit = (values, options) => {
-  //   const newContact = {
-  //     username: values.username,
-  //     phone: values.phone,
-  //     id: crypto.randomUUID(),
-  //   };
-  //   dispatch(addContact(newContact));   //???
-  //   options.resetForm();
-  // };
+  const onSubmit = (values, options) => {
+    const newContact = {
+      name: values.username,
+      phone: values.phone,
+      id: nanoid,
+    };
+    console.log("Відправляємо на сервер:", newContact);
+    dispatch(addContacts(newContact));
+    options.resetForm();
+  };
 
   return (
     <div>

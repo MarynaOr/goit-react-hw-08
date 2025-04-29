@@ -29,9 +29,7 @@ const ContactForm = () => {
     const newContact = {
       name: values.username,
       phone: values.phone,
-      id: nanoid,
     };
-    console.log("Відправляємо на сервер:", newContact);
     dispatch(addContacts(newContact));
     options.resetForm();
   };

@@ -1,7 +1,15 @@
+import { useDispatch } from "react-redux";
 import "./App.css";
 import ContactList from "./components/ContactList/ContactList";
+import { fetchContacts } from "./redux/contactsOps";
+import { useEffect } from "react";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
   return (
     <>
       <ContactList />

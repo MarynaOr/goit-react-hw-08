@@ -51,6 +51,9 @@ const contactsSlice = createSlice({
 // export const { addContact, editContact, deleteContact } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;
 
+export const selectContacts = state => state.contacts.items
+export const selectLoading  = state => state.contacts.isLoading
+export const selectError  = state => state.contacts.isError
 
 // (state, action) => {
   //   state.items = state.items.filter((item) => item.id !== action.payload);

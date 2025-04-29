@@ -6,12 +6,18 @@ import SearchBox from "../SearchBox/SearchBox";
 import { useEffect } from "react";
 import { fetchContacts } from "../../redux/contactsOps";
 import { selectFilteredContacts } from "../../redux/selectFilteredContacts";
+import { selectContacts, selectError, selectLoading } from "../../redux/contactsSlice";
 const ContactList = () => {
   // const contacts = useSelector((state) => state.contacts.items);
   // const filter = useSelector((state) => state.filter.filter);
   // console.log(contacts);
-const selectContacts = useSelector(selectFilteredContacts)
+const contacts = useSelector(selectFilteredContacts)
 const dispatch = useDispatch()
+const items = useSelector(selectContacts)
+const isLoading = useSelector(selectLoading)
+const isError  =useSelector(selectError)
+
+
 
 useEffect(()=>{
   dispatch(fetchContacts())
@@ -23,12 +29,12 @@ useEffect(()=>{
 
   return (
     <>
-      <div className={s.con}>
+      <div className={s.con}> 
         <ContactForm />
         <SearchBox />
         <ul className={s.item}>
-          {selectContacts.length > 0 ? (
-            selectContacts.map(({ id, name, phone }) => (
+          {contacts.length > 0 ? (
+            contacts.map(({ id, name, phone }) => (
               <li className={s.list} key={id}>
                 <Contact id={id} name={name} phone={phone} />
               </li>

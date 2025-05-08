@@ -4,12 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import s from "./ContactList.module.css";
 import SearchBox from "../SearchBox/SearchBox";
 import { useEffect } from "react";
-import { selectFilteredContacts } from "../../redux/selectFilteredContacts";
+import { selectFilteredContacts } from "../../redux/contacts/selectors.js";
 import {
   selectContacts,
   selectError,
   selectLoading,
-} from "../../redux/contactsSlice";
+} from "../../redux/contacts/slice.js";
 const ContactList = () => {
   const contacts = useSelector(selectFilteredContacts);
   const items = useSelector(selectContacts);

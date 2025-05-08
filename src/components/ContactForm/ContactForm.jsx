@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
 import s from "./ContactForm.module.css";
 import * as Yup from "yup";
-import { addContacts } from "../../redux/contactsOps";
+import { addContacts } from "../../redux/contacts/operations";
 import { nanoid } from "@reduxjs/toolkit";
 const onlyLaters = /^[A-Za-zА-Яа-яЇїІіЄєҐґ'’\s]+$/;
 const phoneValidation = /^\+?\d{9,15}$/;

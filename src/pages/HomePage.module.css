@@ -1,0 +1,49 @@
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(135deg, #dbeafe, #c7d2fe); */
+    text-align: center;
+    color: #2d3748;
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    max-width: 600px;
+  }
+  
+  .author {
+    margin-top: 2rem;
+    color: #64748b;
+  }
+
+
+
+
+
+  .cat {
+    position: absolute;
+  top: 60px; 
+  left: -150px;
+  width: 100px;
+  animation: runAcross 10s linear infinite;
+  z-index: 10;
+  }
+  
+  @keyframes runAcross {
+    0% {
+      left: -150px;
+    }
+    100% {
+      left: 100%;
+    }
+  }

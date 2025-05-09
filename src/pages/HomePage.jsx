@@ -10,7 +10,7 @@ const HomePage = () => {
       </p>
       <p className={s.author}>Зроблено з 💙</p>
 
-<img src='../../public/cat-animation.gif' alt="cat" className={s.cat} />
+<img src='/cat-animation.gif' alt="cat" className={s.cat} />
       
 </section>
 

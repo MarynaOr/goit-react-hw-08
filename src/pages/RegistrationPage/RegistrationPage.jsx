@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import ModalComponent from "./ModalComponent";
+// import ModalComponent from "./ModalComponent";
 import { useNavigate } from "react-router-dom";
+import ModalComponent from "../../components/Modal/ModalRegister";
 // import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
 
 const RegistrationPage = () => {

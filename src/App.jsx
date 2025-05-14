@@ -8,8 +8,9 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import Layout from "./Layout";
 import RegistrationPage from "../src/pages/RegistrationPage/RegistrationPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
+// import LoginPage from "./pages/LoginPage/LoginPage";
 import ContactList from "./components/ContactList/ContactList";
+import LoginPage from "./pages/LoginPage/LoginPage";
 
 function App() {
   // const dispatch = useDispatch();

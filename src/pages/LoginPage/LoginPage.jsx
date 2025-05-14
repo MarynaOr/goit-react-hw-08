@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
-import LoginModal from "./LoginModal";
-
+import s from './LoginPage.module.css'
+import LoginModal from "../../components/Modal/LoginModal";
 
 const LoginPage = () => {
   const [openModal, setOpenModal] = useState(false)
@@ -18,7 +18,10 @@ isOpen()
 
   return (
     <>
-      <LoginModal isOpen={openModal} isClose={isClose} />
+    <div className={s.con}>
+            <LoginModal isOpen={openModal} isClose={isClose} />
+
+    </div>
     </>
   );
 };

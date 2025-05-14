@@ -1,5 +1,6 @@
 .home {
     display: flex;
+    /* justify-content: space-between; */
     max-width: 130px;
     cursor: pointer;
     background-color: #eba0004b;
@@ -15,6 +16,11 @@
 
 .nav{
     padding: 0 8px;
+    display: flex;
+    gap: 12px;
+        /* justify-content: space-between; */
+
+    /* justify-content: baseline; */
 }
   
   .active {

@@ -1,6 +1,6 @@
 import Modal from 'react-modal'
 import LoginForm from '../../components/LoginForm/LoginForm';
-import s from './Modal.Module.css'
+import s from "./Modal.module.css";
 
 Modal.setAppElement('#root');
 
@@ -21,6 +21,7 @@ const LoginModal = ({ isOpen, isClose }) => {
       >
         <button  className={s.closeBtn} onClick={isClose}>🙅‍♀️</button>
         <LoginForm/>
+      
       </Modal>
     </>
   );

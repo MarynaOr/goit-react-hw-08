@@ -23,13 +23,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="contacts" element={<ContactList/>} />
-                </Route>
+          <Route path="contacts" element={<ContactList />} />
+        </Route>
+        
+        <Route path="/register" element={<RegistrationPage />} />
+        <Route path="/register" element={<RegistrationPage />} />
 
-        
-        <Route path="/register" element={<RegistrationPage/>} />
-        
-        <Route path="/login" element={<LoginPage/>} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
       {/* <AppBar/> */}
       {/* <ContactList /> */}

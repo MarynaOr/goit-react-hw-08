@@ -9,10 +9,10 @@ const Navigation = () => {
     <>
       <nav className={s.nav}>
         <NavLink className={classActive} to={'/'}>Home</NavLink>
-        <NavLink className={classActive} to={'/contacts'} >Phone Book</NavLink>
-        <NavLink className={classActive} to={'/login'} >Login</NavLink>
-        <NavLink className={classActive} to={'/register'} >Register</NavLink>
-
+        <NavLink className={classActive} to={'/contacts'} >Контакти</NavLink>
+        <NavLink className={classActive} to={'/login'} >Вхід</NavLink>
+        <NavLink className={classActive} to={'/register'} >Реєстрація</NavLink>
+        <NavLink className={classActive} to={'/logout'} >Вихід</NavLink>
       </nav>
     </>
   );

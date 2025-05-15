@@ -11,6 +11,7 @@ import RegistrationPage from "../src/pages/RegistrationPage/RegistrationPage";
 // import LoginPage from "./pages/LoginPage/LoginPage";
 import ContactList from "./components/ContactList/ContactList";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import UserMenu from "./components/UserMenu/UserMenu";
 
 function App() {
   // const dispatch = useDispatch();
@@ -24,10 +25,11 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="contacts" element={<ContactList />} />
+       <Route path="/logout" element={<UserMenu/>} />
         </Route>
         
         <Route path="/register" element={<RegistrationPage />} />
-        <Route path="/register" element={<RegistrationPage />} />
+        {/* <Route path="/register" element={<RegistrationPage />} /> */}
 
         <Route path="/login" element={<LoginPage />} />
       </Routes>

@@ -1,7 +1,8 @@
 .header{
-    display: flex;
+    /* display: flex; */
     background-color: #58585881;
     height: 50px;
-    display: flex;
-    align-items: center;
+    /* gap: 12px; */
+    /* display: flex; */
+    /* align-items: center; */
 }

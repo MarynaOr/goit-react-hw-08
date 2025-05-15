@@ -1,7 +1,7 @@
 const UserMenu = () => {
   return (
     <>
-      
+      <button>Вихід</button>
     </>
   );
 };

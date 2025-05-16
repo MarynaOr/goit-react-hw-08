@@ -17,13 +17,24 @@ import { setAuthHeader } from "./redux/auth/operations";
 // import { setAuthHeader } from './redux/auth/operations';
 
 function App() {
+ const dispatch = useDispatch();
 
- useEffect(() => {
+  useEffect(() => {
     const token = localStorage.getItem("token");
+    console.log('App useEffect, token:', token);
+
     if (token) {
-      setAuthHeader(token); // 👈 критично важливо
+      setAuthHeader(token);          // Встановлюємо токен в заголовки axios
+      dispatch(fetchContacts());    // Тільки після цього робимо запит контактів
     }
-  }, []);
+  }, [dispatch]);
+//  useEffect(() => {
+//   const token = localStorage.getItem("token");
+//   console.log('App useEffect, token:', token);
+//     if (token) {
+//     setAuthHeader(token);
+//   }
+// }, []);
 
   // const token = localStorage.getItem("token");
   // if (token) {

@@ -6,9 +6,9 @@ import { swaggerApi } from "../auth/operations";
 
 export const fetchContacts = createAsyncThunk(
   "contacts/fetchAll",
-  async (body, thunkAPI) => {
+  async (_, thunkAPI) => {
     try {
-      const { data } = await swaggerApi.get(`contacts`, body);
+      const { data } = await swaggerApi.get(`contacts`, );
       
       return data;
     } catch (e) {

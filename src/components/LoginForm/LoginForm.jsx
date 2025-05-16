@@ -15,16 +15,16 @@ const initialValues = {
 }
 
 const handleSubmit = (values, options) =>{
-  console.log(values);
-  dispatch(fetchLogin(values))
+ console.log('Login form submitted with values:', values);
+   dispatch(fetchLogin(values))
   options.resetForm()
   
 }
-useEffect(()=>{
-  if(login){
-    navigate('/contacts')
-  }
-},[login, navigate])
+// useEffect(()=>{
+//   if(login){
+//     navigate('/contacts')
+//   }
+// },[login, navigate])
 
   return (
     <>
@@ -38,8 +38,10 @@ useEffect(()=>{
           <label className={s.label}>
             <span className={s.span}>Password:</span>
             <Field type="password" className={s.input} name="password" />
-            <button type="submit" className={s.btn}> Відправити</button>
           </label>
+            <button type="submit" className={s.btn}> Відправити</button>
+
+
         </Form>
       </Formik>
     </>

@@ -7,12 +7,12 @@ export const swaggerApi = axios.create({
 
 export const setAuthHeader = (token) => {
   swaggerApi.defaults.headers.common.Authorization = `Bearer ${token}`;
-};
+console.log('setAuthHeader called, token:', token);};
 
 export const clearAuthHeader = () => {
-  swaggerApi.defaults.headers.common.Authorization = ``;
+  swaggerApi.defaults.headers.common.Authorization = '';
 };
-
+// console.log('Auth header:', swaggerApi.defaults.headers.common.Authorization);
 export const fetchAuth = createAsyncThunk(
   "auth/fetchAuth",
   async (body, thunkAPI) => {
@@ -33,12 +33,13 @@ export const fetchLogin = createAsyncThunk(
   async (body, thunkAPI) => {
     try {
       const { data } = await swaggerApi.post("users/login", body);
-      // console.log('Login payload:', body);
+ console.log('Received token:', data.token);      // console.log('Login payload:', body);
       localStorage.setItem("token", data.token);
       setAuthHeader(data.token);
 
       return data;
     } catch (error) {
+       console.log('Login error:', error.message);
       return thunkAPI.rejectWithValue(error.message);
     }
   }

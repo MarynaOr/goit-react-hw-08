@@ -12,7 +12,7 @@ const Navigation = () => {
         <NavLink className={classActive} to={'/contacts'} >Контакти</NavLink>
         <NavLink className={classActive} to={'/login'} >Вхід</NavLink>
         <NavLink className={classActive} to={'/register'} >Реєстрація</NavLink>
-        <NavLink className={classActive} to={'/logout'} >Вихід</NavLink>
+        {/* <NavLink className={classActive} to={'/logout'} >Вихід</NavLink> */}
       </nav>
     </>
   );

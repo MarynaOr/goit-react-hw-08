@@ -12,8 +12,23 @@ import RegistrationPage from "../src/pages/RegistrationPage/RegistrationPage";
 import ContactList from "./components/ContactList/ContactList";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import UserMenu from "./components/UserMenu/UserMenu";
+import { setAuthHeader } from "./redux/auth/operations";
+// import { setAuthHeader } from "./redux/auth/operations";
+// import { setAuthHeader } from './redux/auth/operations';
 
 function App() {
+
+ useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setAuthHeader(token); // 👈 критично важливо
+    }
+  }, []);
+
+  // const token = localStorage.getItem("token");
+  // if (token) {
+  //   setAuthHeader(token); // тепер усі наступні запити будуть з токеном
+  // }
   // const dispatch = useDispatch();
 
   // useEffect(() => {
@@ -25,9 +40,9 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="contacts" element={<ContactList />} />
-       <Route path="/logout" element={<UserMenu/>} />
+          <Route path="/logout" element={<UserMenu />} />
         </Route>
-        
+
         <Route path="/register" element={<RegistrationPage />} />
         {/* <Route path="/register" element={<RegistrationPage />} /> */}
 

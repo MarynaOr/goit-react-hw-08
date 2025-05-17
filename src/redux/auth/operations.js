@@ -7,7 +7,8 @@ export const swaggerApi = axios.create({
 
 export const setAuthHeader = (token) => {
   swaggerApi.defaults.headers.common.Authorization = `Bearer ${token}`;
-console.log('setAuthHeader called, token:', token);};
+// console.log('setAuthHeader called, token:', token);
+};
 
 export const clearAuthHeader = () => {
   swaggerApi.defaults.headers.common.Authorization = '';

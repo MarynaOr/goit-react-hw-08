@@ -20,11 +20,11 @@ const handleSubmit = (values, options) =>{
   options.resetForm()
   
 }
-// useEffect(()=>{
-//   if(login){
-//     navigate('/contacts')
-//   }
-// },[login, navigate])
+useEffect(()=>{
+  if(login){
+    navigate('/contacts')
+  }
+},[login, navigate])
 
   return (
     <>

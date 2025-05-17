@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log('App useEffect, token:', token);
+    // console.log('App useEffect, token:', token);
 
     if (token) {
       setAuthHeader(token);          // Встановлюємо токен в заголовки axios

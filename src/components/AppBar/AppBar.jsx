@@ -17,8 +17,8 @@ const AppBar = () => {
       <header className={s.header}>
         
         <Navigation/>
-       {login ? <UserMenu/> : <p>dsc</p> }
-        {/* <AuthNav/> */}
+       {login ? <UserMenu/> : <AuthNav/> }
+        {/*  */}
       </header>
     </>
   );

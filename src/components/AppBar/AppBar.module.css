@@ -1,8 +1,9 @@
 .header{
-    /* display: flex; */
+    display: flex;
     background-color: #58585881;
     height: 50px;
-    /* gap: 12px; */
+    gap: 12px;
     /* display: flex; */
-    /* align-items: center; */
+    align-items: center;
+    justify-content: space-around;
 }

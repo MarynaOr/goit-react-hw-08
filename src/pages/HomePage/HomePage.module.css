@@ -32,7 +32,7 @@
 
   .cat {
     position: absolute;
-  top: 60px; 
+  top: 90px; 
   left: -150px;
   width: 100px;
   animation: runAcross 10s linear infinite;

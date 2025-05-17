@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import s from "./Contact.module.css";
 import { deleteContact } from "../../redux/contacts/operations";
 
-const Contact = ({ id, name, phone }) => {
+const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
 
   return (
@@ -10,9 +10,9 @@ const Contact = ({ id, name, phone }) => {
       <div className={s.con}>
         <p className={s.text}>{name}</p>
         <p className={s.text}>
-          <a href={`tel:${phone}`} className={s.link}>
+          <a href={`tel:${number}`} className={s.link}>
             {" "}
-            {phone}{" "}
+            {number}{" "}
           </a>
         </p>
       </div>

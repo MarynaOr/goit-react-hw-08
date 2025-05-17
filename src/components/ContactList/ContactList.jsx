@@ -22,9 +22,9 @@ const ContactList = () => {
         <SearchBox />
         <ul className={s.item}>
           {contacts.length > 0 ? (
-            contacts.map(({ id, name, phone }) => (
+            contacts.map(({ id, name, number }) => (
               <li className={s.list} key={id}>
-                <Contact id={id} name={name} phone={phone} />
+                <Contact id={id} name={name} number={number} />
               </li>
             ))
           ) : (

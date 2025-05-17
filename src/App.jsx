@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import { fetchContacts } from "./redux/contacts/operations";
 import { useEffect } from "react";
@@ -13,9 +13,11 @@ import UserMenu from "./components/UserMenu/UserMenu";
 import { setAuthHeader } from "./redux/auth/operations";
 import RestrictedRout from "./components/RestrictedRoute/RestrictedRout";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import { selectIsRefreshing } from "./redux/auth/selectors";
 
 function App() {
   const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -26,11 +28,11 @@ function App() {
     }
   }, [dispatch]);
 
-  return (
-    <>
-      <Routes>
+  return isRefreshing ? null : (
+     <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<RestrictedRout component={<HomePage/>} redirectTo="/contacts" />} />
+        <Route index element={<HomePage/>} />
+          {/* <Route index element={<RestrictedRout component={<HomePage/>} redirectTo="/" />} /> */}
           <Route path="contacts" element={<PrivateRoute> <ContactList /> </PrivateRoute>} />
           <Route path="/logout" element={<UserMenu />} />
         </Route>
@@ -38,10 +40,16 @@ function App() {
 
         <Route path="/login" element={<RestrictedRout component={<LoginPage />} redirectTo="/contacts" />} />
       </Routes>
-      {/* <AppBar/> */}
-      {/* <ContactList /> */}
-    </>
-  );
+      
+  )
+  
+  
+  
+  // (
+  //   <>
+     
+  //   </>
+  // );
 }
 
 export default App;

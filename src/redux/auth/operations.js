@@ -7,6 +7,7 @@ export const swaggerApi = axios.create({
 
 export const setAuthHeader = (token) => {
   swaggerApi.defaults.headers.common.Authorization = `Bearer ${token}`;
+  //  console.log('Auth header set:', swaggerApi.defaults.headers.common.Authorization);
 // console.log('setAuthHeader called, token:', token);
 };
 
@@ -58,5 +59,4 @@ export const fetchLogout = createAsyncThunk(
   }
 );
 
-// anonimouszc
-// ddggff@gdz.com
+// orlean@buety.com

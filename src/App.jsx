@@ -28,6 +28,9 @@ function App() {
       dispatch(fetchContacts());    // Тільки після цього робимо запит контактів
     }
   }, [dispatch]);
+
+
+  
 //  useEffect(() => {
 //   const token = localStorage.getItem("token");
 //   console.log('App useEffect, token:', token);

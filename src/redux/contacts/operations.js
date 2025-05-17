@@ -8,7 +8,7 @@ export const fetchContacts = createAsyncThunk(
   "contacts/fetchAll",
   async (_, thunkAPI) => {
     try {
-      const { data } = await swaggerApi.get(`contacts`, );
+      const { data } = await swaggerApi.get('contacts' );
       
       return data;
     } catch (e) {

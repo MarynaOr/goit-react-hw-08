@@ -35,7 +35,7 @@ export const fetchLogin = createAsyncThunk(
   async (body, thunkAPI) => {
     try {
       const { data } = await swaggerApi.post("users/login", body);
- console.log('Received token:', data.token);      // console.log('Login payload:', body);
+ console.log('Received token:', data.token);     
       localStorage.setItem("token", data.token);
       setAuthHeader(data.token);
 
@@ -52,7 +52,8 @@ export const fetchLogout = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       await swaggerApi.post("users/logout");
-      clearAuthHeader();
+      localStorage.removeItem("token");
+      return
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

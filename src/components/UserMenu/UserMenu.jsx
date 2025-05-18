@@ -8,13 +8,17 @@ import s from './UserMenu.module.css'
 const UserMenu = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
-  // useEffect(()=>{
-  //   fetchLogout()
-  // })
+ 
+  // const handleLogout = () => {
+  //   dispatch(fetchLogout());
+  //   dispatch(cleanContacts())
+  // };
+
   const handleLogout = () => {
-    dispatch(fetchLogout());
-    // dispatch(cleanContacts())
-  };
+ dispatch(fetchLogout());
+  // dispatch(cleanContacts());
+};
+
   return (
     <>
       <div className={s.con}>

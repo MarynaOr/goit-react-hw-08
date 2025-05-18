@@ -29,25 +29,36 @@ function App() {
   }, [dispatch]);
 
   return isRefreshing ? null : (
-     <Routes>
-        <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage/>} />
-          {/* <Route index element={<RestrictedRout component={<HomePage/>} redirectTo="/" />} /> */}
-          <Route path="contacts" element={<PrivateRoute> <ContactList /> </PrivateRoute>} />
-          <Route path="/logout" element={<UserMenu />} />
-        </Route>
-        <Route path="/register" element={<RegistrationPage />} />
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        {/* <Route index element={<RestrictedRout component={<HomePage/>} redirectTo="/" />} /> */}
+        <Route
+          path="contacts"
+          element={
+            <PrivateRoute>
+              {/* {" "} */}
+              <ContactList />
+              {/* // {" "} */}
+            </PrivateRoute>
+          }
+        />
+        <Route path="/logout" element={<UserMenu />} />
+      </Route>
+      <Route path="/register" element={<RegistrationPage />} />
 
-        <Route path="/login" element={<RestrictedRout component={<LoginPage />} redirectTo="/contacts" />} />
-      </Routes>
-      
-  )
-  
-  
-  
+      <Route
+        path="/login"
+        element={
+          <RestrictedRout component={<LoginPage />} redirectTo="/contacts" />
+        }
+      />
+    </Routes>
+  );
+
   // (
   //   <>
-     
+
   //   </>
   // );
 }

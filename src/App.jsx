@@ -10,7 +10,7 @@ import RegistrationPage from "../src/pages/RegistrationPage/RegistrationPage";
 import ContactList from "./components/ContactList/ContactList";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import UserMenu from "./components/UserMenu/UserMenu";
-import { setAuthHeader } from "./redux/auth/operations";
+// import { setAuthHeader } from "./redux/auth/operations";
 import RestrictedRout from "./components/RestrictedRoute/RestrictedRout";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import { selectIsRefreshing } from "./redux/auth/selectors";

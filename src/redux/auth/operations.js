@@ -10,7 +10,7 @@ export const setAuthHeader = (token) => {
 };
 
 export const clearAuthHeader = () => {
-  swaggerApi.defaults.headers.common.Authorization = ``;
+ delete swaggerApi.defaults.headers.common.Authorization;
 };
 
 export const fetchAuth = createAsyncThunk(
@@ -43,6 +43,13 @@ export const fetchLogout = createAsyncThunk(
   "logout/fetchLogout",
   async (_, thunkAPI) => {
     try {
+      const token = thunkAPI.getState().auth.token;
+if (!token) {
+  return thunkAPI.rejectWithValue("Токен відсутній");
+}
+      setAuthHeader(token);
+
+      console.log('Authorization header перед logout:', swaggerApi.defaults.headers.common.Authorization);
       await swaggerApi.post("users/logout");
       clearAuthHeader();
     } catch (error) {

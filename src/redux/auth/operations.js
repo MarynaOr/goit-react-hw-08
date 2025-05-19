@@ -49,7 +49,6 @@ if (!token) {
 }
       setAuthHeader(token);
 
-      console.log('Authorization header перед logout:', swaggerApi.defaults.headers.common.Authorization);
       await swaggerApi.post("users/logout");
       clearAuthHeader();
     } catch (error) {

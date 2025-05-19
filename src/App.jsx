@@ -14,20 +14,16 @@ import UserMenu from "./components/UserMenu/UserMenu";
 import RestrictedRout from "./components/RestrictedRoute/RestrictedRout";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import { selectIsRefreshing } from "./redux/auth/selectors";
+import { refreshUser } from "./redux/auth/operations";
 
 function App() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-
-    if (token) {
-      setAuthHeader(token);
-      dispatch(fetchContacts());
-    }
-  }, [dispatch]);
-
+ 
+// useEffect(() => {
+//     dispatch(refreshUser());
+//   }, [dispatch]);
   return isRefreshing ? null : (
     <Routes>
       <Route path="/" element={<Layout />}>

@@ -12,7 +12,7 @@ const handlePending = (state) => {
 };
 
 const HandleRejected = (state, action) => {
-  isLoading = false;
+  isLoading = true;
   state.isError = action.payload;
 };
 

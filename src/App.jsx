@@ -15,15 +15,15 @@ import RestrictedRout from "./components/RestrictedRoute/RestrictedRout";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import { selectIsRefreshing } from "./redux/auth/selectors";
 import { refreshUser } from "./redux/auth/operations";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   // const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
 
- 
-// useEffect(() => {
-//     dispatch(refreshUser());
-//   }, [dispatch]);
+  // useEffect(() => {
+  //     dispatch(refreshUser());
+  //   }, [dispatch]);
   return isRefreshing ? null : (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -49,6 +49,7 @@ function App() {
           <RestrictedRout component={<LoginPage />} redirectTo="/contacts" />
         }
       />
+      <Route path="*" element={<NotFound/>} />
     </Routes>
   );
 

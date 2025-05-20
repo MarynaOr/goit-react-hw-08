@@ -4,8 +4,8 @@ import AppBar from "./components/AppBar/AppBar";
 const Layout = () => {
   return (
     <>
-      <AppBar/>
-      <Outlet/>
+      <AppBar />
+      <Outlet />
     </>
   );
 };

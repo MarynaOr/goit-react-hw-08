@@ -4,16 +4,9 @@ import { useSelector } from "react-redux";
 import s from "./ContactList.module.css";
 import SearchBox from "../SearchBox/SearchBox";
 import { selectFilteredContacts } from "../../redux/contacts/selectors.js";
-import {
-  selectContacts,
-  selectError,
-  selectLoading,
-} from "../../redux/contacts/slice.js";
+
 const ContactList = () => {
   const contacts = useSelector(selectFilteredContacts);
-  const items = useSelector(selectContacts);
-  const isLoading = useSelector(selectLoading);
-  const isError = useSelector(selectError);
 
   return (
     <>

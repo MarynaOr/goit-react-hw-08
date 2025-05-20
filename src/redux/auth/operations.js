@@ -10,7 +10,7 @@ export const setAuthHeader = (token) => {
 };
 
 export const clearAuthHeader = () => {
- delete swaggerApi.defaults.headers.common.Authorization;
+  delete swaggerApi.defaults.headers.common.Authorization;
 };
 
 export const fetchAuth = createAsyncThunk(
@@ -44,9 +44,9 @@ export const fetchLogout = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.token;
-if (!token) {
-  return thunkAPI.rejectWithValue("Токен відсутній");
-}
+      if (!token) {
+        return thunkAPI.rejectWithValue("Токен відсутній");
+      }
       setAuthHeader(token);
 
       await swaggerApi.post("users/logout");
@@ -61,19 +61,18 @@ export const refreshUser = createAsyncThunk(
   "auth/refresh",
   async (_, thunkAPI) => {
     try {
-       const savedToken = thunkAPI.getState().auth.token;
+      const savedToken = thunkAPI.getState().auth.token;
 
       if (!savedToken) {
         return thunkAPI.rejectWithValue("Token is not exist!");
       }
-      setAuthHeader(savedToken)
-      const response = await swaggerApi.get('users/current')
-      return response.data
+      setAuthHeader(savedToken);
+      const response = await swaggerApi.get("users/current");
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
-     
     }
-  } 
+  }
 );
 
 // // orlean@buety.com

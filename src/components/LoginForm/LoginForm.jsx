@@ -6,31 +6,28 @@ import { isLoggedIn } from "../../redux/auth/selectors";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 const LoginForm = () => {
-const dispatch =useDispatch()
-const login = useSelector(isLoggedIn)
-const navigate = useNavigate()
-const initialValues = {
-  email: '',
-  password: '',
-}
+  const dispatch = useDispatch();
+  const login = useSelector(isLoggedIn);
+  const navigate = useNavigate();
+  const initialValues = {
+    email: "",
+    password: "",
+  };
 
-const handleSubmit = (values, options) =>{
-//  console.log('Login form submitted with values:', values);
-   dispatch(fetchLogin(values))
-  options.resetForm()
-  
-}
-useEffect(()=>{
-  if(login){
-    navigate('/contacts')
-  }
-},[login, navigate])
+  const handleSubmit = (values, options) => {
+    dispatch(fetchLogin(values));
+    options.resetForm();
+  };
+  useEffect(() => {
+    if (login) {
+      navigate("/contacts");
+    }
+  }, [login, navigate]);
 
   return (
     <>
       <Formik onSubmit={handleSubmit} initialValues={initialValues}>
         <Form className={s.form}>
-          
           <label className={s.label}>
             <span className={s.span}>Email:</span>
             <Field className={s.input} name="email" />
@@ -39,9 +36,10 @@ useEffect(()=>{
             <span className={s.span}>Password:</span>
             <Field type="password" className={s.input} name="password" />
           </label>
-            <button type="submit" className={s.btn}> Відправити</button>
-
-
+          <button type="submit" className={s.btn}>
+            {" "}
+            Відправити
+          </button>
         </Form>
       </Formik>
     </>

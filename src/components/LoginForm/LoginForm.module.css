@@ -1,31 +1,28 @@
-.form{
-    display: flex;
-    /* justify-content: center; */
-    flex-direction: column;
-    gap: 12px;
-
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.label{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 8px;
+.label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
 }
 
-.span{
-    font-size: 18px;
-    font-weight: 600;
+.span {
+  font-size: 18px;
+  font-weight: 600;
   color: rgb(0, 0, 0);
 }
 
-.input{
-    height: 30px;
-    background-color: transparent;
+.input {
+  height: 30px;
+  background-color: transparent;
   outline: none;
   border: none;
   border-bottom: 2px solid #424242;
-  
 }
 
 .btn {

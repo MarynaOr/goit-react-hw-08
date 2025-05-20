@@ -1,17 +1,15 @@
-.auth{
-    /* display: flex; */
-    flex-direction: row;
-    justify-content: space-between;
-    max-width: 130px;
-    cursor: pointer;
-    background-color: #eba0004b;
-    color: rgb(98, 98, 99);
-    padding: 2px;
-    border: none;
-    border-radius: 8px;
-    /* margin-top: 14px; */
-    font-weight: 700;
-    font-size: 25px;
-    transition: background-color 0.5s ease, color 0.5s ease;
-  
+.auth {
+  /* display: flex; */
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 130px;
+  cursor: pointer;
+  background-color: #eba0004b;
+  color: rgb(98, 98, 99);
+  padding: 2px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 25px;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }

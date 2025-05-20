@@ -1,6 +1,5 @@
 import Modal from "react-modal";
 import RegistrationForm from "../RegistrationForm/RegistrationForm";
-// import RegistrationForm from '../RegistrationForm/RegistrationForm';
 import s from "./Modal.module.css";
 
 Modal.setAppElement("#root");

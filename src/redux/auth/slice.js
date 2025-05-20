@@ -34,8 +34,7 @@ const authSlice = createSlice({
       .addCase(refreshUser.rejected, (state) => {
         state.isRefreshing = false;
       })
-            .addCase(fetchLogout.fulfilled, () => initialState)
-
+      .addCase(fetchLogout.fulfilled, () => initialState);
   },
 });
 

@@ -1,5 +1,5 @@
-.modalCon{
-     background-color: white;
+.modalCon {
+  background-color: white;
   padding: 20px;
   max-width: 500px;
   margin: auto;
@@ -8,25 +8,24 @@
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* напівпрозорий фон */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-    position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 }
 
-.closeBtn{
-    background-color: transparent;
-    position: absolute;
-    right: 4px;
-    top: 4px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    /* font-weight: 600; */
+.closeBtn {
+  background-color: transparent;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
 }

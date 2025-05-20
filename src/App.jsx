@@ -10,32 +10,51 @@ import RegistrationPage from "../src/pages/RegistrationPage/RegistrationPage";
 import ContactList from "./components/ContactList/ContactList";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import UserMenu from "./components/UserMenu/UserMenu";
-// import { setAuthHeader } from "./redux/auth/operations";
+import { setAuthHeader } from "./redux/auth/operations";
 import RestrictedRout from "./components/RestrictedRoute/RestrictedRout";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-import { selectIsRefreshing } from "./redux/auth/selectors";
+import { isLoggedIn, selectIsRefreshing, selectToken } from "./redux/auth/selectors";
 import { refreshUser } from "./redux/auth/operations";
 import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
+ const token = useSelector(selectToken);
+  const login = useSelector(isLoggedIn);
 
-  // useEffect(() => {
-  //     dispatch(refreshUser());
-  //   }, [dispatch]);
-  return isRefreshing ? null : (
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
+
+ useEffect(() => {
+    if (token) {
+      setAuthHeader(token);
+    }
+  }, [token]);
+
+
+ useEffect(() => {
+    if (login) {
+      dispatch(fetchContacts());
+    }
+  }, [dispatch, login]);
+
+
+
+  
+
+
+  return isRefreshing ? <div>Завантаження...</div> : (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
-        {/* <Route index element={<RestrictedRout component={<HomePage/>} redirectTo="/" />} /> */}
         <Route
           path="contacts"
           element={
             <PrivateRoute>
-              {/* {" "} */}
               <ContactList />
-              {/* // {" "} */}
             </PrivateRoute>
           }
         />
@@ -53,11 +72,7 @@ function App() {
     </Routes>
   );
 
-  // (
-  //   <>
-
-  //   </>
-  // );
+ 
 }
 
 export default App;

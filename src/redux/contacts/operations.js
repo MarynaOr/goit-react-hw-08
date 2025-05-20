@@ -18,7 +18,7 @@ export const deleteContact = createAsyncThunk('contacts/deleteContact', async (i
     await swaggerApi.delete(`contacts/${id}`)
     return id
   } catch (error) {
-    return thunkAPI.rejectWithValue(e.message);
+    return thunkAPI.rejectWithValue(error.message);
 
   }
 })
@@ -28,7 +28,7 @@ export const addContacts = createAsyncThunk('contacts/addContacts', async(body, 
     const response = await swaggerApi.post('contacts',body)
     return response.data
   } catch (error) {
-        return thunkAPI.rejectWithValue(e.message);
+        return thunkAPI.rejectWithValue(error.message);
 
   }
 })
